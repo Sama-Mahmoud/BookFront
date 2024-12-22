@@ -1,0 +1,13 @@
+<div>
+@for (Book of books; track Book.id) {
+   <li >{{Book.title}} -  {{Book.publishedYear}}</li>
+   <button (click) = "Delete(Book.id)">Delete</button>
+   <button (click)="edit(Book.id)">edit</button>
+}@empty {
+  <h1>Empty</h1>
+}
+
+<div>
+<button (click)="Add()">Add</button>
+</div>
+</div>

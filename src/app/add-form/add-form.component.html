@@ -1,0 +1,39 @@
+<form [formGroup]="form" (submit)="Add()">
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" formControlName="title" />
+        <div *ngIf="form.get('title')?.invalid && form.get('title')?.touched">
+            title is required.
+        </div>
+      </div>
+    
+      <div>
+        <label for="author">author:</label>
+        <input type="text" id="author" formControlName="author" />
+        <div *ngIf="form.get('author')?.invalid && form.get('author')?.touched">
+            author a valid email.
+        </div>
+      </div>
+
+      <div>
+        <label for="genre">genre:</label>
+        <input type="text" id="genre" formControlName="genre" />
+        <div *ngIf="form.get('genre')?.invalid && form.get('genre')?.touched">
+            genre a valid email.
+        </div>
+      </div>
+      <div>
+        <label for="publishedYear">publishedYear:</label>
+        <input type="number" id="publishedYear" formControlName="publishedYear" />
+        <div *ngIf="form.get('publishedYear')?.invalid && form.get('publishedYear')?.touched">
+            publishedYear a valid email.
+        </div>
+      </div>
+    
+      <button type="submit" [disabled]="form.invalid">Submit</button>
+
+</form>
+
+<div>
+    <button (click)="Home()" >Back to home</button>
+</div>
