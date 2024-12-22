@@ -1,13 +1,17 @@
-<div>
-@for (Book of books; track Book.id) {
-   <li >{{Book.title}} -  {{Book.publishedYear}}</li>
-   <button (click) = "Delete(Book.id)">Delete</button>
-   <button (click)="edit(Book.id)">edit</button>
-}@empty {
-  <h1>Empty</h1>
-}
+<div class="home-container">
+  <ul class="book-list">
+    @for (book of books; track book.id) {
+      <span class="book-info">{{ book.title }} - {{ book.publishedYear }}</span>
+      <div class="button-group">
+        <button (click)="Delete(book.id)" class="delete-btn">Delete</button>
+        <button (click)="edit(book.id)" class="edit-btn">Edit</button>
+      </div>
+    }@empty {
+      <h1 class="empty-message">No books available</h1>
 
-<div>
-<button (click)="Add()">Add</button>
-</div>
-</div>
+    }
+
+  <div class="add-button-container">
+    <button (click)="Add()" class="add-btn">Add Book</button>
+  </div>
+
